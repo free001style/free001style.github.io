@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ilya Drobyshevskiy</title>
+  <meta name="description" content="Academic page of Ilya Drobyshevskiy — diffusion models, distillation, visual generative AI." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80' font-family='system-ui' font-weight='700'>ID</text></svg>" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0f172a;
+      --muted: #475569;
+      --link: #0284c7;
+      --accent: #b22222;
+      --border: rgba(100, 116, 139, 0.25);
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      background: var(--bg); color: var(--fg);
+      line-height: 1.6; font-size: 16px;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 1100px; margin: 0 auto; padding: 24px;
+      display: grid; gap: 28px; grid-template-columns: 280px 1fr;
+    }
+
+    /* ---------- sidebar ---------- */
+    aside { padding: 14px; position: sticky; top: 20px; align-self: start; text-align: center; }
+    .avatar {
+      width: 80%; max-width: 200px; aspect-ratio: 1 / 1; object-fit: cover;
+      border-radius: 12px; display: block; margin: 0 auto 10px;
+    }
+    .name { font-size: 1.75rem; font-weight: 700; margin: 4px 0; line-height: 1.25; }
+    .role { color: var(--muted); margin: 0 0 10px; }
+    .links { display: flex; flex-direction: column; align-items: center; gap: 2px; margin-top: 10px; }
+    .link-item {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      color: var(--fg); padding: 6px 0; min-width: 150px;
+    }
+    .link-item:hover { color: var(--link); text-decoration: none; }
+    .link-item svg { width: 18px; height: 18px; flex: none; }
+
+    /* ---------- main ---------- */
+    main { display: grid; gap: 26px; padding-top: 14px; min-width: 0; }
+    h2 { font-size: 1.35rem; margin: 0 0 6px; }
+    p { margin: 0 0 8px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 4px; }
+    .muted { color: var(--muted); }
+    .separator { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
+
+    .news li .date { font-weight: 600; margin-right: 6px; white-space: nowrap; }
+
+    .pub-list { display: grid; gap: 18px; margin-top: 8px; }
+    .pub-title { font-weight: 700; font-size: 1.12rem; margin: 0 0 2px; line-height: 1.4; }
+    .pub-authors { color: var(--muted); margin-bottom: 2px; }
+    .pub-authors .me { color: var(--fg); font-weight: 700; }
+    .pub-venue { font-style: italic; }
+    .pub-links a { margin-right: 10px; white-space: nowrap; }
+    .pub-links a::before { content: "["; color: var(--muted); }
+    .pub-links a::after  { content: "]"; color: var(--muted); }
+    .note { font-size: .9rem; color: var(--muted); margin-top: 6px; }
+
+    .entry { margin-bottom: 12px; }
+    .entry-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0 12px; }
+    .entry-head strong { font-weight: 650; }
+    .entry-date { color: var(--muted); white-space: nowrap; }
+
+    footer { color: var(--muted); font-size: .85rem; border-top: 1px solid var(--border); padding-top: 12px; }
+
+    @media (max-width: 820px) {
+      .container { grid-template-columns: 1fr; gap: 12px; }
+      aside { position: static; }
+      main { padding-top: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ================= SIDEBAR ================= -->
+    <aside>
+      <!-- Put your photo next to this file as photo.jpg; until then the GitHub avatar is used. -->
+      <img class="avatar" src="photo.jpg" alt="Ilya Drobyshevskiy"
+           onerror="this.onerror=null; this.src='https://github.com/free001style.png';">
+      <div class="name">Ilya Drobyshevskiy</div>
+      <div class="role">ML Research Resident at Yandex Research<br>MSc student at HSE &amp; YSDA</div>
+      <nav class="links">
+        <a class="link-item" href="https://scholar.google.com/citations?user=BovM6psAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 3L1.5 8.25a1 1 0 000 1.8L12 15.3l10.5-5.25a1 1 0 000-1.8L12 3z"/><path d="M6 12.6v2.4a6 6 0 004 5.65V16.4l-4-1.8zm12 0l-4 1.8v4.25A6 6 0 0018 15v-2.4z"/></svg>
+          Google Scholar
+        </a>
+        <a class="link-item" href="https://x.com/free001style" target="_blank" rel="noopener" aria-label="X / Twitter: @free001style">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932zM17.61 20.644h2.039L6.486 3.24H4.298z"/></svg>
+          X / Twitter
+        </a>
+        <a class="link-item" href="https://github.com/free001style" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .5C5.73.5.9 5.33.9 11.6c0 4.87 3.16 9 7.54 10.45.55.1.75-.24.75-.53 0-.26-.01-1.13-.02-2.05-3.07.67-3.72-1.32-3.72-1.32-.5-1.26-1.23-1.6-1.23-1.6-1-.68.08-.66.08-.66 1.1.08 1.68 1.12 1.68 1.12.98 1.67 2.58 1.19 3.2.9.1-.7.38-1.19.69-1.46-2.45-.28-5.02-1.22-5.02-5.44 0-1.2.43-2.17 1.12-2.94-.11-.28-.49-1.42.1-2.96 0 0 .92-.29 3.02 1.12a10.5 10.5 0 015.5 0c2.1-1.41 3.02-1.12 3.02-1.12.59 1.54.21 2.68.1 2.96.7.77 1.12 1.74 1.12 2.94 0 4.23-2.58 5.16-5.04 5.43.39.33.74.98.74 1.97 0 1.42-.01 2.57-.01 2.92 0 .29.2.64.76.53A10.73 10.73 0 0023.1 11.6C23.1 5.33 18.27.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <a class="link-item" href="https://linkedin.com/in/free001style" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4v16h-4zM8 8h3.8v2.2h.1c.6-1.1 2.1-2.2 4.3-2.2 4.6 0 5.5 3 5.5 6.8V24h-4v-7.8c0-1.9-.03-4.2-2.6-4.2-2.6 0-3 2-3 4.1V24H8z"/></svg>
+          LinkedIn
+        </a>
+        <a class="link-item" href="https://t.me/free001style" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M9.04 16.56l-.39 5.52c.56 0 .8-.24 1.09-.53l2.62-2.5 5.43 3.96c.99.55 1.7.26 1.94-.92l3.52-16.53c.31-1.45-.52-2.02-1.48-1.67L1.65 9.45c-1.42.55-1.4 1.33-.24 1.69l5.56 1.73L18.63 6.4c.66-.44 1.26-.2.77.28L9.04 16.56z"/></svg>
+          Telegram
+        </a>
+        <a class="link-item" href="mailto:iadrobyshevskiy@yandex.ru">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 13.065l-11-7V6a2 2 0 012-2h18a2 2 0 012 2v.065l-11 7zm0 2.87l-11-7V18a2 2 0 002 2h18a2 2 0 002-2v-9.065l-11 7z"/></svg>
+          Email
+        </a>
+        <a class="link-item" href="cv.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zM8 13h8v1.5H8V13zm0 3h8v1.5H8V16z"/></svg>
+          CV
+        </a>
+      </nav>
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+    <main>
+      <section id="bio">
+        <h2>Bio</h2>
+        <p>
+          I am a ML Research Resident in the Visual GenAI team at
+          <a href="https://research.yandex.com" target="_blank" rel="noopener">Yandex Research</a>,
+          where I work on accelerating diffusion models and improving their generation quality under the supervision of
+          <a href="https://dbaranchuk.github.io/" target="_blank" rel="noopener">Dmitry Baranchuk</a> and
+          <a href="https://scholar.google.com/citations?user=2Kv3JP0AAAAJ&amp;hl=en" target="_blank" rel="noopener">Artem Babenko</a>.
+          At the same time, I am pursuing a Master's degree in Computer Science at
+          <a href="https://www.hse.ru/en/" target="_blank" rel="noopener">HSE University</a>
+          and studying at the <a href="https://dataschool.yandex.com/" target="_blank" rel="noopener">Yandex School of Data Analysis</a>.
+        </p>
+        <p>
+          <strong>I am looking for PhD opportunities for 2027.</strong>
+        </p>
+        <hr class="separator">
+        <p>
+          Previously, I was a Research Intern at the
+          <a href="https://bayesgroup.org/" target="_blank" rel="noopener">Centre of Deep Learning and Bayesian Methods</a>
+          at HSE University, working on face swapping with diffusion models and GANs, supervised by
+          <a href="https://scholar.google.com/citations?user=MXJTRGoAAAAJ&amp;hl=en" target="_blank" rel="noopener">Aibek Alanov</a>.
+          I received my Bachelor's degree in Applied Mathematics and Computer Science from HSE University.
+        </p>
+      </section>
+
+      <section id="news" class="news">
+        <h2>News</h2>
+        <ul>
+          <li><span class="date">Oct 2026</span>We've released our new preprint, <a href="https://arxiv.org/pdf/2610.06648" target="_blank" rel="noopener">Representation-Space MMD for Diffusion Language Models</a>! An early version of this work was accepted for an <a href="https://openreview.net/forum?id=1yZVQG6ozr" target="_blank" rel="noopener">oral presentation</a> at the <a href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/DiffuLM" target="_blank" rel="noopener">NeurIPS 2026 DiffuLM workshop</a>.</li>
+          <li><span class="date">May 2026</span>I'm happy to share our new preprint, <a href="https://arxiv.org/abs/2605.16147" target="_blank" rel="noopener">Registers Matter for Pixel-Space Diffusion Transformers</a>!</li>
+          <li><span class="date">Apr 2026</span>I'm honored to receive the Yandex Scholar Award for my research in computer science!</li>
+          <li><span class="date">Jan 2026</span>Two of our papers are heading to ICLR 2026: <a href="https://yandex-research.github.io/swd/" target="_blank" rel="noopener">SwD</a> and <a href="https://arxiv.org/abs/2602.09268" target="_blank" rel="noopener">Rethinking Global Text Conditioning in DiTs</a>!</li>
+        </ul>
+      </section>
+
+      <section id="interests">
+        <h2>Research Interests</h2>
+        <p>Image/Video and Text Diffusion Models, Distillation and Efficient Sampling, Post-Training.</p>
+      </section>
+
+      <section id="publications">
+        <h2>Publications</h2>
+        <div class="pub-list">
+          <div class="pub">
+            <div class="pub-title">Representation-Space MMD for Diffusion Language Models</div>
+            <div class="pub-authors"><span class="me">Ilya Drobyshevskiy*</span>, Ilia Sudakov*, Maksim Semenov, Denis Kuznedelev, Maksim Ignatov, Pavel Temirchev, Nikita Balagansky, Viacheslav Meshchaninov, Nikita Gushchin, Dmitry Baranchuk</div>
+            <div><span class="pub-venue">Preprint, 2026</span></div>
+            <div class="note">Early version accepted for an oral presentation at the NeurIPS 2026 DiffuLM workshop.</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2610.06648" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://github.com/yandex-research/dlm-mmd" target="_blank" rel="noopener">Code</a>
+              <a href="https://x.com/free001style/status/2107464231042138343" target="_blank" rel="noopener">Twitter 1</a>
+              <a href="https://x.com/sudakov_il/status/2107467032769736979" target="_blank" rel="noopener">Twitter 2</a>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Registers Matter for Pixel-Space Diffusion Transformers</div>
+            <div class="pub-authors">Nikita Starodubcev, Ilia Sudakov*, <span class="me">Ilya Drobyshevskiy*</span>, Artem Babenko, Dmitry Baranchuk</div>
+            <div><span class="pub-venue">Preprint, 2026</span></div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2605.16147" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://github.com/quickjkee/register-guidance" target="_blank" rel="noopener">Code</a>
+              <a href="https://quickjkee.github.io/registers-project-page/" target="_blank" rel="noopener">Project Page</a>
+              <a href="https://x.com/NikStarodub/status/2077675854843294137?s=20" target="_blank" rel="noopener">Twitter</a>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Rethinking Global Text Conditioning in Diffusion Transformers</div>
+            <div class="pub-authors">Nikita Starodubcev, Daniil Pakhomov, Zongze Wu, <span class="me">Ilya Drobyshevskiy</span>, Yuchen Liu, Zhonghao Wang, Yuqian Zhou, Zhe Lin, Dmitry Baranchuk</div>
+            <div><span class="pub-venue">ICLR 2026</span></div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2602.09268" target="_blank" rel="noopener">arXiv</a>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Scale-wise Distillation of Diffusion Models</div>
+            <div class="pub-authors">Nikita Starodubcev, <span class="me">Ilya Drobyshevskiy</span>, Denis Kuznedelev, Artem Babenko, Dmitry Baranchuk</div>
+            <div><span class="pub-venue">ICLR 2026</span></div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2503.16397" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://github.com/yandex-research/swd" target="_blank" rel="noopener">Code</a>
+              <a href="https://yandex-research.github.io/swd/" target="_blank" rel="noopener">Project Page</a>
+              <a href="https://huggingface.co/spaces/dbaranchuk/SwD-FLUX" target="_blank" rel="noopener">Demo</a>
+            </div>
+          </div>
+        </div>
+        <div class="note">* Equal contribution</div>
+      </section>
+
+    
+
+      <footer>© 2026 Ilya Drobyshevskiy</footer>
+    </main>
+  </div>
+
+</body>
+</html>
